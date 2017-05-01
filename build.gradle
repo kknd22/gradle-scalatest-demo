@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.maiflai:gradle-scalatest:0.15'
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'com.github.maiflai.scalatest'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.11.7'
+    testCompile 'org.scalatest:scalatest_2.11:2.2.5'
+    testRuntime 'org.pegdown:pegdown:1.1.0'
+
+    // -- comment out the following line will make the test sucessful
+    compile 'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.5'
+
+}
